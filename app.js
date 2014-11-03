@@ -69,9 +69,12 @@ io.sockets.on('connection', function(socket) {
       console.log(data);
       socket.broadcast.emit('message', data);
   });
-});
-
-setInterval(function(){
+  
+  setInterval(function(){
   data = '[' + os.hostname() +' | ' + os.uptime() + '] ' + new Date();
   socket.broadcast.emit('message', data);
 }, 5000);
+
+});
+
+
