@@ -70,3 +70,8 @@ io.sockets.on('connection', function(socket) {
       socket.broadcast.emit('message', data);
   });
 });
+
+setInterval(function(){
+  data = '[' + os.hostname() +' | ' + os.uptime() + '] ' + new Date();
+  socket.broadcast.emit('message', data);
+}, 5000);
